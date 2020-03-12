@@ -1,0 +1,104 @@
+/* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Fredoka+One|Righteous&display=swap";
+
+/*------------------------------------HEADER------------------------------------*/
+
+.header{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.384);
+    
+}
+
+.header ul{
+    margin: 0;
+    text-align: center;
+}
+
+
+.header li{ /*itens da lista*/
+
+    list-style: none; /*dexa na horizontal, sem efeito lista*/
+    display: inline-block; /*deixa lado a lado*/
+
+}
+
+
+.header ul li a{
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 4px;
+    padding: 25px;
+   transition: all ease 0.5s;
+}
+
+.header ul li a:hover{
+    background-color: #3be225c2;
+}
+
+/*------------------------------------------------------------------------------*/
+
+.logoAnimation{
+    position: absolute;
+    left: 40vw; /* posiciona para a esquerda */ 
+    top: 122px; /* posiciona para baixo */
+    
+    
+}
+
+.circle{
+    width: 289px; /*largura */
+    height: 290px; /*altura */
+    border-radius: 50%;
+    background-color:#fff;
+    position: absolute;
+    left: 40vw; /* posiciona para a esquerda */ 
+    top: 122px; /* posiciona para baixo */
+}
+.welcome{
+    font-size: 32px;
+    text-align: center;
+    margin-top: 24vw;  /*posiciona para baixo */
+    color:rgb(255, 255, 255);
+    font-family: 'Righteous', cursive;
+    letter-spacing: .2rem;
+}
+.slogan{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 1vw;
+    color:rgb(255, 255, 255);
+    font-family: 'Righteous', cursive;
+    letter-spacing: .2rem;
+}
+
+.Comercial{
+    position: absolute;
+    left: 27vw;  
+    top: 41vw; 
+
+}
+
+.WelcomeFamily{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 28vw;  /*posiciona para baixo */
+    color:rgb(255, 255, 255);
+    font-family: 'Righteous', cursive;
+    letter-spacing: .2rem;
+}
+body{
+   margin: 0; /*margem para pegar a tela toda*/
+   background-image: url('src/assets/rgbBackground.png');
+   
+    /* 
+    background: #232526;  
+    background: -webkit-linear-gradient(to right, #414345, #232526);  
+    background: linear-gradient(to right, #414345, #232526); 
+    */
+}
+
+
