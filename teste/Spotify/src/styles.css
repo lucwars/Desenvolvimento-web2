@@ -1,16 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://fonts.googleapis.com/css?family=Fredoka+One|Righteous&display=swap";
 
-body {
-  margin: 0; /*margem para pegar a tela toda*/
-  /*background-image: url('/src/assets/rgbBackground.png') no-repeat center center/cover;*/
-  background-image: url("../src/assets/rgbBackground.png");
 
-  font-family: "Righteous", cursive;
-
-  /* 
+body{
+    margin: 0; /*margem para pegar a tela toda*/
+    background-image: url('../src/assets/rgbBackground.png');
+    
+     /* 
      background: #232526;  
      background: -webkit-linear-gradient(to right, #414345, #232526);  
      background: linear-gradient(to right, #414345, #232526); 
      */
-}
+ }
+ 
