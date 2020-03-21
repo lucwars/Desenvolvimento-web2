@@ -1,4 +1,15 @@
 /*------------------------------------HEADER------------------------------------*/
+
+#nav-logo{
+    margin-left: -26vw;
+    margin-right: 17vw;
+    text-transform: uppercase;
+    color: #1ed760;
+    font-size: 25px;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 4px;
+}
+
 .header{
     width: 100%;
     background-color: rgba(0, 0, 0, 0.384);
