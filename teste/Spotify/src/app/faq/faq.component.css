@@ -8,7 +8,9 @@ div.panel {
   max-width: 65%;
   margin: auto;
   font-family: 'Righteous', cursive;
-  margin-top: calc(5% - 0px);
+  margin-top: 75px;
+  margin: 112px;
+  margin-left: 20vw;
   
 }
 details {
