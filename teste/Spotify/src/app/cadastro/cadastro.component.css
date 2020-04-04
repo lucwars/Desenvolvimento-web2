@@ -22,3 +22,11 @@ img {
   display: block;
   margin: 0 auto 2rem auto;
 }
+
+.emailError {
+  display: block;
+}
+
+.error {
+  display: none;
+}

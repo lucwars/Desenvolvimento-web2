@@ -1,10 +1,11 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { ShowCaseComponent } from "./show-case/show-case.component";
+import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
@@ -16,10 +17,10 @@ import { CadastroComponent } from "./cadastro/cadastro.component";
     ShowCaseComponent,
     FooterComponent,
     PlaylistComponent,
-    CadastroComponent
+    CadastroComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

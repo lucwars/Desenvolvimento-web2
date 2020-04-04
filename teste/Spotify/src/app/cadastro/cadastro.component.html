@@ -2,35 +2,61 @@
   <img src="assets/Spotify-logo.png" width="170" height="50" />
   <h5>Inscrever-se com seu endereço de email</h5>
 
-  <form>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <!-- Value: {{ myForm.value | json }} -->
+
     <div class="form-group">
-      <input type="email" class="form-control" id="email" placeholder="Email" />
+      <input
+        name="email"
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Email"
+        formControlName="email"
+      />
     </div>
 
     <div class="form-group">
       <input
+        required
+        name="emailConfirmation"
         type="email"
         class="form-control"
         id="emailConfirmation"
         placeholder="Confirmar Email"
+        formControlName="emailConfirmation"
       />
+    </div>
+
+    <div
+      class="alert alert-danger"
+      *ngIf="
+        myForm.controls.emailConfirmation.invalid &&
+        myForm.controls.emailConfirmation.dirty
+      "
+    >
+      <p>Emails não batem</p>
     </div>
 
     <div class="form-group">
       <input
+        name="password"
         type="password"
         class="form-control"
         id="password"
         placeholder="Senha"
+        formControlName="password"
       />
     </div>
 
     <div class="form-group">
       <input
+        name="username"
         type="text"
         class="form-control"
         id="username"
         placeholder="Como devemos chamar você?"
+        formControlName="username"
       />
     </div>
 
@@ -38,11 +64,23 @@
 
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" id="day" placeholder="Dia" />
+        <input
+          name="dayOfBirth"
+          type="text"
+          class="form-control"
+          id="dayOfBirth"
+          placeholder="Dia"
+          formControlName="dayOfBirth"
+        />
       </div>
       <div class="form-group col">
-        <select id="month" class="form-control">
-          <option selected>Mês</option>
+        <select
+          name="monthOfBirth"
+          id="monthOfBirth"
+          class="form-control"
+          formControlName="monthOfBirth"
+        >
+          <option value="" disabled selected hidden>Mês</option>
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -58,54 +96,35 @@
         </select>
       </div>
       <div class="col">
-        <input type="text" class="form-control" id="year" placeholder="Ano" />
+        <input
+          name="yearOfBirth"
+          type="text"
+          class="form-control"
+          id="yearOfBirth"
+          placeholder="Ano"
+          formControlName="yearOfBirth"
+        />
+      </div>
+    </div>
+    <p>Gênero</p>
+    <div class="form-group">
+      <div class="form-group">
+        <select
+          name="gender"
+          id="gender"
+          class="form-control"
+          formControlName="gender"
+        >
+          <option value="" disabled selected hidden>Escolha seu gênero</option>
+          <option>Masculino</option>
+          <option>Feminino</option>
+          <option>Não binário</option>
+        </select>
       </div>
     </div>
 
-    <fieldset class="form-group">
-      <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Gênero</legend>
-        <div class="col-sm-10">
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="masculino"
-              id="masculino"
-              value="masculino"
-            />
-            <label class="form-check-label" for="masculino">
-              Masculino
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="feminino"
-              id="feminino"
-              value="feminino"
-            />
-            <label class="form-check-label" for="feminino">
-              Feminino
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              name="naobinario"
-              id="naobinario"
-              value="naobinario"
-            />
-            <label class="form-check-label" for="nbinario">
-              Não binário
-            </label>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-
-    <button type="submit" class="btn btn-primary">Inscrever-se</button>
+    <button type="submit" class="btn btn-primary btn-block btn-success">
+      Inscrever-se
+    </button>
   </form>
 </div>
