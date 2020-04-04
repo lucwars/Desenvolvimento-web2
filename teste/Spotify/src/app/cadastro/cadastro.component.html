@@ -126,5 +126,11 @@
     <button type="submit" class="btn btn-primary btn-block btn-success">
       Inscrever-se
     </button>
+    <div
+      class="alert alert-success"
+      *ngIf="myForm.controls.emailConfirmation.valid && successMsg"
+    >
+      <p>Inscrição realizada com sucesso!</p>
+    </div>
   </form>
 </div>

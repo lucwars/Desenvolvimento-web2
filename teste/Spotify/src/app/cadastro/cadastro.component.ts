@@ -11,6 +11,7 @@ import { emailValidator } from "./validator";
 })
 export class CadastroComponent implements OnInit {
   myForm: FormGroup;
+  successMsg: boolean = false;
 
   constructor(private fb: FormBuilder) {}
 
@@ -31,7 +32,9 @@ export class CadastroComponent implements OnInit {
     );
   }
 
-  onSubmit(): void {}
+  onSubmit(): void {
+    this.successMsg = true;
+  }
 
   reset() {
     this.myForm.reset();
