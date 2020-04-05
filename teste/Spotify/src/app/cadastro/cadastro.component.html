@@ -123,7 +123,11 @@
       </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-block btn-success">
+    <button
+      type="submit"
+      class="btn btn-primary btn-block btn-success"
+      [disabled]="!myForm.valid"
+    >
       Inscrever-se
     </button>
     <div
@@ -131,6 +135,12 @@
       *ngIf="myForm.controls.emailConfirmation.valid && successMsg"
     >
       <p>Inscrição realizada com sucesso!</p>
+    </div>
+    <div
+      class="alert alert-danger"
+      *ngIf="!myForm.valid && myForm.controls.email.touched"
+    >
+      <p>Preencha os campos de email corretamente!</p>
     </div>
   </form>
 </div>
