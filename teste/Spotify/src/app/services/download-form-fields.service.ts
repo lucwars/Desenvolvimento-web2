@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import * as FileSaver from "file-saver";
 import { FormGroup } from "@angular/forms";
 
 @Injectable({
@@ -15,10 +14,3 @@ export class PersistFormService {
     console.log(this.cadastros);
   }
 }
-
-// downloadForm(myForm: FormGroup) {
-//   let blob = new Blob([JSON.stringify(myForm.value)], {
-//     type: "application/json",
-//   });
-//   FileSaver.saveAs(blob, "mock-data.json");
-// }
