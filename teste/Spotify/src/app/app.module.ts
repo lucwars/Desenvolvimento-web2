@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { FooterComponent } from "./footer/footer.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
+import { AudioplayerComponent } from './audioplayer/audioplayer.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CadastroComponent } from "./cadastro/cadastro.component";
     FooterComponent,
     PlaylistComponent,
     CadastroComponent,
+    AudioplayerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
