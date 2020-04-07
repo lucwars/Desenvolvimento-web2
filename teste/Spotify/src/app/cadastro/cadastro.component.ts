@@ -1,4 +1,4 @@
-import { DownloadFormFieldsService } from "./../services/download-form-fields.service";
+import { PersistFormService } from "./../services/download-form-fields.service";
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { emailValidator } from "./validator";
@@ -12,10 +12,7 @@ export class CadastroComponent implements OnInit {
   myForm: FormGroup;
   successMsg: boolean = false;
 
-  constructor(
-    private fb: FormBuilder,
-    private dffs: DownloadFormFieldsService
-  ) {}
+  constructor(private fb: FormBuilder, private pfs: PersistFormService) {}
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
@@ -36,7 +33,7 @@ export class CadastroComponent implements OnInit {
 
   onSubmit(): void {
     this.successMsg = true;
-    this.dffs.downloadForm(this.myForm);
+    this.pfs.downloadForm(this.myForm);
     this.reset();
   }
 
