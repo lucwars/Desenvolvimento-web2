@@ -1,13 +1,82 @@
-/*.square{ 
-  background-color: rgba(7, 7, 7, 0.527);
-  height: 50vw;
-  width: 100vw;  
-  margin: auto;
-  
-  filter: blur(10px);      filtro blur(deixa embassado
-  
-
+/*--------------------------- IMAGE VIEW ---------------------------*/
+#tituloCantor{
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  margin-left: 4vw;
+  margin-top: -27vw;
 }
-*/
 
+.imgbox{
+  width: 360px;
+  height:360px;
+  background: rgba(255, 0, 0, 0);
+  border-radius: 50%;
+  align-items: center;
+  margin-top: -15vw;
+  margin-left: 5vw;
+  
+}
+
+.imgbox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /*pesquisar sobre*/
+  border-radius: 50%;
+}
+
+/*------------------------------------------------------------------*/
+
+
+
+.audioMusic{
+  margin-left: 51vw;
+  margin-top: 3vw;
+  width: 33vw;
+  height: 36px;
+  
+}
+
+.shadow{
+  position: relative;
+  margin: 77px auto;
+  width: 90vw;
+  height: 36vw;
+  background: linear-gradient(0deg,#000,#262626);
+  border-radius: 20px;
+}
+
+.shadow:before, .shadow:after{
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background: linear-gradient(45deg,#fb0094,#0000ff, #00ff00, #ffff00, #ff0000
+  ,#fb0094,#0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: animate 20s linear infinite ;
+  border-radius: 20px;
+}
+
+.shadow:after{
+  filter: blur(20px);
+}
+
+@keyframes animate{ /*pesquisar o que é esse keyframes*/
+
+        0%{
+          background-position: 0 0;
+        }
+
+        50%{
+          background-position:  400% 0;
+        }
+
+        100%{
+          background-position: 0 0;
+        }
+}
 
