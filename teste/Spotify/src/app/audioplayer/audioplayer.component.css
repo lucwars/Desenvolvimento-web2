@@ -1,11 +1,51 @@
-/*--------------------------- IMAGE VIEW ---------------------------*/
+
 #tituloCantor{
   color: #ffffff;
   font-family: 'Fredoka One', cursive;
   font-weight: 60;
   margin-left: 4vw;
-  margin-top: -27vw;
+  margin-top: -28vw;
 }
+
+#titulomusica{
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  margin-left: 50rem;
+  margin-top: -61px;
+  font-size: 18px;
+}
+
+#titulomusica2{
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  margin-left: 50rem;
+  margin-top: 53px;
+  font-size: 18px;
+
+}
+
+#titulomusica3{
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  margin-left: 50rem;
+  margin-top: 80px;
+  font-size: 18px;
+}
+
+#titulomusica4{
+  color: #ffffff;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  margin-left: 50rem;
+  margin-top: 64px;
+  font-size: 18px;
+}
+
+/*--------------------------- IMAGE VIEW ---------------------------*/
+
 
 .imgbox{
   width: 360px;
@@ -13,7 +53,7 @@
   background: rgba(255, 0, 0, 0);
   border-radius: 50%;
   align-items: center;
-  margin-top: -15vw;
+  margin-top: -25vw;
   margin-left: 5vw;
   
 }
@@ -31,7 +71,29 @@
 
 .audioMusic{
   margin-left: 51vw;
-  margin-top: 3vw;
+  margin-top: 7vw;
+  width: 33vw;
+  height: 36px;
+  
+}
+
+.audioMusic2{
+  margin-left: 51vw;
+  margin-top: 5vw;
+  width: 33vw;
+  height: 36px;
+  
+}
+.audioMusic3{
+  margin-left: 51vw;
+  margin-top: 5vw;
+  width: 33vw;
+  height: 36px;
+  
+}
+.audioMusic4{
+  margin-left: 51vw;
+  margin-top: 5vw;
   width: 33vw;
   height: 36px;
   
