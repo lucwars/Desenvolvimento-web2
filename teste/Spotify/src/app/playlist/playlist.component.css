@@ -5,6 +5,13 @@
     font-weight: 80;
 }
 
+#musicas{
+    left: 0px;
+    margin-left: 40px;
+}
+
+
+
 #headh1{
     text-align: center;
     margin-top: 54px;
@@ -161,8 +168,39 @@
     cursor: pointer;
     transition: 0.4s ease-in-out;
     margin-inline-end: 63px;
+    visibility: hidden; /*CASO QUEIRA SUMIR COM O BOTÃO */
 } 
 
 .card .Info .btn:hover{
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
 }
+
+
+/*------------------------------BUTTON NEON------------------------------*/
+#Bneon{
+    position: relative;
+    display: inline-block;
+    padding: 22px 62px;
+    color: #3be225c2;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin-left: 37vw;
+    background-color:seashell;
+    border-radius: 52px;
+    box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.5);
+    
+}
+
+#Bneon:hover{
+    color: #1b6911e8 ;
+    background: #3be225c2;
+    box-shadow: 0 0 10px #3be225c2, 0 0 40px #3be225c2,
+    0 0 10px #3be225c2 ;
+}
+
+
+/*-----------------------------------------------------------------------*/

@@ -1,10 +1,48 @@
+/*--------------------------- NAVIGATION BAR AUDIO ---------------------------*/
+ul{
+  width: 100% ;
+  background: #000;
+  height: 50PX;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 83px;
+  letter-spacing: 0;
+  display: flex;
+  justify-content: space-around; /*espaçamento entre os */
+ 
+}
 
+ul li{
+  list-style: none;
+
+}
+a:hover{
+  color: #3be225c2;
+}
+
+a{
+  transition: 0.1s;
+}
+ul li {
+  color: #ffffff;
+  line-height: 50px;
+  box-sizing: border-box;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  text-decoration: none;
+  cursor: pointer;
+  
+}
+
+/*-----------------------------------------------------------------------------*/
 #tituloCantor{
   color: #ffffff;
   font-family: 'Fredoka One', cursive;
   font-weight: 60;
   margin-left: 4vw;
   margin-top: -28vw;
+  
 }
 
 #titulomusica{
@@ -44,7 +82,7 @@
   font-size: 18px;
 }
 
-/*--------------------------- IMAGE VIEW ---------------------------*/
+/*--------------------------- IMAGE VIEW AUDIO ---------------------------*/
 
 
 .imgbox{
@@ -101,11 +139,12 @@
 
 .shadow{
   position: relative;
-  margin: 77px auto;
+  margin: 135px auto;
   width: 90vw;
   height: 36vw;
   background: linear-gradient(0deg,#000,#262626);
   border-radius: 20px;
+  
 }
 
 .shadow:before, .shadow:after{
@@ -127,7 +166,7 @@
   filter: blur(20px);
 }
 
-@keyframes animate{ /*pesquisar o que é esse keyframes*/
+@keyframes animate{ /*A regra geral do@keyframes CSS controla as etapas intermediárias em uma sequência de animação CSS*/
 
         0%{
           background-position: 0 0;
@@ -142,3 +181,36 @@
         }
 }
 
+
+
+
+/*------------------------------BUTTON NEON------------------------------*/
+#Bneon{
+  position: relative;
+  display: inline-block;
+  padding: 22px 62px;
+  color: #3be225c2;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 60;
+  font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+  margin-left: 37vw;
+  background-color:seashell;
+  border-radius: 52px;
+  box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+#Bneon:hover{
+  color: #1b6911e8 ;
+  background: #3be225c2;
+  box-shadow: 0 0 10px #3be225c2, 0 0 40px #3be225c2,
+  0 0 10px #3be225c2 ;
+}
+
+
+/*-----------------------------------------------------------------------*/
