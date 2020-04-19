@@ -203,6 +203,7 @@ ul li {
   border-radius: 52px;
   box-shadow: 1px 6px 10px 3px rgba(0, 0, 0, 0.5);
   cursor: pointer;
+  margin-bottom: 4vw;
 }
 
 #Bneon:hover{
