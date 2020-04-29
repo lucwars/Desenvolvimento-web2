@@ -33,7 +33,7 @@ export class CadastroComponent implements OnInit {
 
   onSubmit(): void {
     this.successMsg = true;
-    this.pfs.downloadForm(this.myForm);
+    this.pfs.downloadForm(this.myForm.value);
     this.reset();
   }
 

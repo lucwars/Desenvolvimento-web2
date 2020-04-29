@@ -1,15 +1,18 @@
+import { PlaylistService } from './../services/playlist.service';
+import { Playlist } from './../playlistMock/playlist';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-playlist',
-  templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.css']
+	selector: 'app-playlist',
+	templateUrl: './playlist.component.html',
+	styleUrls: ['./playlist.component.css'],
 })
 export class PlaylistComponent implements OnInit {
+	playlists: Playlist[];
 
-  constructor() { }
+	constructor(private ps: PlaylistService) {}
 
-  ngOnInit(): void {
-  }
-
+	ngOnInit(): void {
+		this.playlists = this.ps.all();
+	}
 }

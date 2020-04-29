@@ -1,5 +1,4 @@
 import { Injectable } from "@angular/core";
-import { FormGroup } from "@angular/forms";
 
 @Injectable({
   providedIn: "root",
@@ -9,8 +8,8 @@ export class PersistFormService {
 
   constructor() {}
 
-  downloadForm(myForm: FormGroup) {
-    this.cadastros.push(myForm.value);
+  downloadForm(value: JSON) {
+    this.cadastros.push(value);
     console.log(this.cadastros);
   }
 }

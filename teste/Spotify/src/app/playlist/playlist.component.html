@@ -1,4 +1,19 @@
+<div class="playlist-container">
+	<span class="title">Grandes playlists para melhorar seu dia</span>
+	<div class="list-playlist-container">
+		<div
+			class="playlistbox-container"
+			[routerLink]="['/playlist-selected', i]"
+			*ngFor="let playlist of playlists; let i = index"
+			[attr.data-index]="i"
+		>
+			<img src="{{ playlist.image }}" alt="playlist-img" />
+			<span>{{ playlist.name }}</span>
+		</div>
+	</div>
+</div>
 
+<!-- 
 <h1 id = "headh1">Defina o seu momento <b>:</b></h1>
 
 <div class="wrapper">
@@ -112,4 +127,4 @@
     <span></span>
     <span></span>
     Ouça Todas Agora !
-    </a>
+    </a> -->

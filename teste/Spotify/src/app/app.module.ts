@@ -10,6 +10,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { PlaylistComponent } from "./playlist/playlist.component";
 import { CadastroComponent } from "./cadastro/cadastro.component";
 import { AudioplayerComponent } from './audioplayer/audioplayer.component';
+import { PlaylistSelectedComponent } from './playlist-selected/playlist-selected.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AudioplayerComponent } from './audioplayer/audioplayer.component';
     PlaylistComponent,
     CadastroComponent,
     AudioplayerComponent,
+    PlaylistSelectedComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
