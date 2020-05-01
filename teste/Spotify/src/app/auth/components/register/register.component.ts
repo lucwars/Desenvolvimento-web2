@@ -1,4 +1,5 @@
-import { PersistFormService } from '../../../services/download-form-fields.service';
+import { User } from './../../../models/User';
+import { PersistUsers } from '../../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { emailValidator } from './validator';
@@ -9,7 +10,7 @@ import { emailValidator } from './validator';
 	styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-	constructor(private fb: FormBuilder, private pfs: PersistFormService) {}
+	constructor(private fb: FormBuilder, private pu: PersistUsers) {}
 
 	myForm: FormGroup;
 	successMsg: boolean = false;
@@ -32,8 +33,17 @@ export class RegisterComponent implements OnInit {
 	}
 
 	onSubmit(): void {
+		let user = new User(
+			this.myForm.value.email,
+			this.myForm.value.username,
+			this.myForm.value.password,
+			this.myForm.value.dayOfBirth,
+			this.myForm.value.monthOfBirth,
+			this.myForm.value.yearOfBirth,
+			this.myForm.value.gender
+		);
 		this.successMsg = true;
-		this.pfs.downloadForm(this.myForm.value);
+		this.pu.persistUser(user);
 		this.reset();
 	}
 
