@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
 
 	myForm: FormGroup;
 	successMsg: boolean = false;
+	id: number = 0;
 
 	ngOnInit(): void {
 		this.myForm = this.fb.group({
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
 
 	onSubmit(): void {
 		let user = new User(
+			this.id,
 			this.myForm.value.email,
 			this.myForm.value.username,
 			this.myForm.value.password,
@@ -43,7 +45,8 @@ export class RegisterComponent implements OnInit {
 			this.myForm.value.gender
 		);
 		this.successMsg = true;
-		this.pu.persistUser(user);
+		this.pu.createUser(user);
+		this.id++;
 		this.reset();
 	}
 
