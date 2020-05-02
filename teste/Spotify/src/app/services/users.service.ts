@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PersistUsers {
 	cadastros: Array<User> = [];
-	SERVER_URL: string = 'http://localhost:4200/';
+	SERVER_URL: string = 'localhost:4200/';
 
 	constructor(private httpClient: HttpClient) {}
 
@@ -15,7 +15,7 @@ export class PersistUsers {
 		return this.httpClient.get(this.SERVER_URL + 'users');
 	}
 
-	public getPolicy(userId) {
+	public getUser(userId) {
 		return this.httpClient.get(`${this.SERVER_URL + 'users'}/${userId}`);
 	}
 
