@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
 
 	onSubmit(): void {
 		this.searchUser(this.myForm.value.email, this.myForm.value.password);
-		this.successMsg = true;
 		this.reset();
 	}
 
@@ -37,10 +36,11 @@ export class LoginComponent implements OnInit {
 	}
 
 	searchUser(email: string, password: string) {
-		this.pu.getUser(email).subscribe((ret: User) => {
-			if (password == ret.password) {
+		this.pu.searchUser(email).subscribe((ret: User) => {
+			console.log(ret);
+			if (password == ret[0].password) {
 				console.log('usuário encontrado: ', ret);
-				this.router.navigate(['/profile', ret.id]);
+				this.router.navigate(['/profile', ret[0].id]);
 			}
 		});
 	}

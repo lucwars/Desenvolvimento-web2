@@ -1,6 +1,7 @@
 import { User } from './../models/User';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -17,6 +18,16 @@ export class PersistUsers {
 
 	public getUser(userId) {
 		return this.httpClient.get(`${this.SERVER_URL + 'users'}/${userId}`);
+	}
+
+	public searchUser(email: string): Observable<any> {
+		email = email.trim();
+
+		const options = email
+			? { params: new HttpParams().set('email', email) }
+			: {};
+
+		return this.httpClient.get(this.SERVER_URL + 'users', options);
 	}
 
 	public createUser(user: User) {
