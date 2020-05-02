@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
 		this.myForm.reset();
 	}
 
-	public createUser(user: User) {
+	createUser(user: User) {
 		this.pu.createUser(user).subscribe((ret) => {
 			console.log('User created: ', ret);
 		});

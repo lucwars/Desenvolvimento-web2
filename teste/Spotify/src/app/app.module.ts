@@ -14,6 +14,7 @@ import { AudioplayerComponent } from './audioplayer/audioplayer.component';
 import { PlaylistSelectedComponent } from './playlist-selected/playlist-selected.component';
 import { AuthModule } from './auth/auth.module';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
 	declarations: [
@@ -24,6 +25,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 		PlaylistComponent,
 		AudioplayerComponent,
 		PlaylistSelectedComponent,
+		ProfileComponent,
 	],
 	imports: [
 		BrowserModule,

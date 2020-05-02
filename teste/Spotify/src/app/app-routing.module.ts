@@ -5,6 +5,7 @@ import { ShowCaseComponent } from './show-case/show-case.component';
 import { FaqComponent } from './faq/faq.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { AudioplayerComponent } from './audioplayer/audioplayer.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
 	{ path: '', component: ShowCaseComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
 	{ path: 'playlist', component: PlaylistComponent },
 	{ path: 'audioplayer', component: AudioplayerComponent },
 	{ path: 'playlist-selected/:id', component: PlaylistSelectedComponent },
+	{ path: 'profile/:id', component: ProfileComponent },
 ];
 
 @NgModule({

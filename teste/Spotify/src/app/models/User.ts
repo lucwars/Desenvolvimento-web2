@@ -1,3 +1,4 @@
+import { Audio } from './../audioMOCK/audio';
 export class User {
 	id: number;
 	email: string;
@@ -7,6 +8,7 @@ export class User {
 	monthOfBirth: string;
 	yearOfBirth: string;
 	gender: string;
+	playlist: Array<Audio> = [];
 
 	constructor(
 		id: number,
@@ -26,5 +28,9 @@ export class User {
 		this.monthOfBirth = monthOfBirth;
 		this.yearOfBirth = yearOfBirth;
 		this.gender = gender;
+	}
+
+	public addMusic(music: Audio) {
+		this.playlist.push(music);
 	}
 }
