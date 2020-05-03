@@ -27,7 +27,8 @@ export class LoginComponent implements OnInit {
 	}
 
 	onSubmit(): void {
-		this.searchUser(this.myForm.value.email, this.myForm.value.password);
+		this.login(this.myForm.value.email);
+
 		this.reset();
 	}
 
@@ -35,13 +36,12 @@ export class LoginComponent implements OnInit {
 		this.myForm.reset();
 	}
 
-	searchUser(email: string, password: string) {
-		this.pu.searchUser(email).subscribe((ret: User) => {
+	login(email: string) {
+		this.pu.searchUser(email).subscribe((ret) => {
 			console.log(ret);
-			if (password == ret[0].password) {
-				console.log('usuário encontrado: ', ret);
-				this.router.navigate(['/profile', ret[0].id]);
-			}
+			let user = ret[0];
+			localStorage.setItem('user', JSON.stringify(user));
+			this.router.navigate(['/profile', user.id]);
 		});
 	}
 }

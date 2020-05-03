@@ -9,7 +9,6 @@ import { PersistUsers } from '../services/users.service';
 	styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
-	userId: number;
 	user: User;
 
 	constructor(
@@ -19,19 +18,13 @@ export class ProfileComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		this.userId = Number(this.route.snapshot.paramMap.get('id'));
-		this.searchUser(this.userId);
-	}
-
-	searchUser(id: number) {
-		this.pu.getUser(id).subscribe((ret: User) => {
-			this.user = ret;
-		});
+		this.user = JSON.parse(localStorage.getItem('user'));
 	}
 
 	onDelete(user: User) {
 		this.pu.deleteUser(this.user);
-		this.router.navigate(['/register']);
+		localStorage.removeItem('user');
+		this.router.navigate(['/']);
 	}
 
 	onEdit(userId: number) {}
