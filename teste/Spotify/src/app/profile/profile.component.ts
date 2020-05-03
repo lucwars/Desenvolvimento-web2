@@ -19,10 +19,11 @@ export class ProfileComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.user = JSON.parse(localStorage.getItem('user'));
+		console.log(this.user);
 	}
 
 	onDelete(user: User) {
-		this.pu.deleteUser(this.user);
+		this.pu.deleteUser(user).subscribe();
 		localStorage.removeItem('user');
 		this.router.navigate(['/']);
 	}

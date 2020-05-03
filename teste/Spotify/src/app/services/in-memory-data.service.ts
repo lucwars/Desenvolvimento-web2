@@ -11,7 +11,7 @@ export class InMemoryDataService implements InMemoryDbService {
 		const users = [
 			{
 				id: 0,
-				email: 'teste@gmail.com',
+				email: 't@g.com',
 				username: 'Root',
 				password: 'admin',
 				dayOfBirth: 12,
