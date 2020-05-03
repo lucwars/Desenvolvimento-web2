@@ -15,6 +15,7 @@ import { PlaylistSelectedComponent } from './playlist-selected/playlist-selected
 import { AuthModule } from './auth/auth.module';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 
 @NgModule({
 	declarations: [
@@ -26,6 +27,7 @@ import { ProfileComponent } from './profile/profile.component';
 		AudioplayerComponent,
 		PlaylistSelectedComponent,
 		ProfileComponent,
+		EditProfileComponent,
 	],
 	imports: [
 		BrowserModule,

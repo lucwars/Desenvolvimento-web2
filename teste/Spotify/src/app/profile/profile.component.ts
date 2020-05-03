@@ -28,5 +28,7 @@ export class ProfileComponent implements OnInit {
 		this.router.navigate(['/']);
 	}
 
-	onEdit(userId: number) {}
+	onEdit(userId: number) {
+		this.router.navigate(['/profile/edit-profile', userId]);
+	}
 }
