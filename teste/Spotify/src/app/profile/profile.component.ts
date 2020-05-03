@@ -2,6 +2,7 @@ import { User } from './../models/User';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PersistUsers } from '../services/users.service';
+import { IsLoggedInService } from '../services/is-logged-in.service';
 
 @Component({
 	selector: 'app-profile',
@@ -11,19 +12,15 @@ import { PersistUsers } from '../services/users.service';
 export class ProfileComponent implements OnInit {
 	user: User;
 
-	constructor(
-		private route: ActivatedRoute,
-		private pu: PersistUsers,
-		private router: Router
-	) {}
+	constructor(private router: Router, private lis: IsLoggedInService) {}
 
 	ngOnInit(): void {
 		this.user = JSON.parse(localStorage.getItem('user'));
 		console.log(this.user);
 	}
 
-	onDelete(user: User) {
-		this.pu.deleteUser(user).subscribe();
+	onLogOut() {
+		this.lis.setValue(false);
 		localStorage.removeItem('user');
 		this.router.navigate(['/']);
 	}

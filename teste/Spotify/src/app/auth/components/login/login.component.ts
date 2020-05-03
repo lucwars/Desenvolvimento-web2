@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { PersistUsers } from 'src/app/services/users.service';
 import { Router } from '@angular/router';
+import { IsLoggedInService } from 'src/app/services/is-logged-in.service';
 
 @Component({
 	selector: 'app-login',
@@ -13,7 +14,8 @@ export class LoginComponent implements OnInit {
 	constructor(
 		private fb: FormBuilder,
 		private pu: PersistUsers,
-		private router: Router
+		private router: Router,
+		private lis: IsLoggedInService
 	) {}
 
 	myForm: FormGroup;
@@ -38,6 +40,7 @@ export class LoginComponent implements OnInit {
 	}
 
 	login(email: string, password: string) {
+		this.lis.setValue(true);
 		this.pu.searchUser(email).subscribe((obs) => {
 			console.log(obs);
 			let user = obs[0];
