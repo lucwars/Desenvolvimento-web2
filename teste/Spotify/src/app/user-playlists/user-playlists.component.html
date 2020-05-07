@@ -1,0 +1,32 @@
+<div class="container">
+	<h3>Escute suas playlists favoritas</h3>
+
+	<div class="music-list-container">
+		<div class="music-container" *ngFor="let audio of playlist; let i = index">
+			<div class="play-info-container">
+				<div (click)="[playMusic(audio.path, i)]">
+					<img
+						class="play-pause-button"
+						src="../../../assets/play.svg"
+						alt=""
+					/>
+				</div>
+
+				<div class="music-info">
+					<span class="music-index">{{ i + 1 }}. </span>
+					<span>{{ audio.name }}</span>
+
+					<div class="author-album">
+						<span>{{ audio.author }}</span>
+						<span>|</span>
+						<span>{{ audio.album }}</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="music-time">
+				<span> {{ parseTime(audio.duration) }} Seg </span>
+			</div>
+		</div>
+	</div>
+</div>

@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./playlist.component.css'],
 })
 export class PlaylistComponent implements OnInit {
-	playlists: Playlist[];
+	playlists: Playlist[] = [];
 
 	constructor(private ps: PlaylistService) {}
 
 	ngOnInit(): void {
-		this.playlists = this.ps.all();
+		this.ps.all().subscribe((playlists) => {
+			this.playlists = playlists;
+		});
 	}
 }

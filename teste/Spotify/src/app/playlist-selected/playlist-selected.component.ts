@@ -1,3 +1,5 @@
+import { PersistUsers } from 'src/app/services/users.service';
+import { User } from './../models/User';
 import { Playlist } from './../playlistMock/playlist';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -14,12 +16,32 @@ export class PlaylistSelectedComponent implements OnInit {
 	isPlaying = false;
 	idPlaying = -1;
 	audio = new Audio();
+	user: User;
 
-	constructor(private route: ActivatedRoute, private ps: PlaylistService) {}
+	constructor(
+		private route: ActivatedRoute,
+		private ps: PlaylistService,
+		private pu: PersistUsers
+	) {}
 
 	ngOnInit(): void {
 		this.playlistId = Number(this.route.snapshot.paramMap.get('id'));
-		this.playlist = this.ps.show(this.playlistId);
+		this.ps.show(this.playlistId).subscribe((playlist) => {
+			this.playlist = playlist;
+		});
+		// this.playlist = this.ps.show(this.playlistId);
+		let localUser = JSON.parse(localStorage.getItem('user'));
+		this.user = new User(
+			localUser.id,
+			localUser.email,
+			localUser.username,
+			localUser.password,
+			localUser.dayOfBirth,
+			localUser.monthOfBirth,
+			localUser.yearOfBirth,
+			localUser.gender
+		);
+		this.user.playlist = localUser.playlist;
 	}
 
 	playMusic(musicPath, index) {
@@ -44,5 +66,11 @@ export class PlaylistSelectedComponent implements OnInit {
 		const seg = time - min * 60;
 
 		return `${min}:${String(seg).padStart(2, '0')}`;
+	}
+
+	addToPlaylist(audio) {
+		this.user.addMusic(audio);
+		localStorage.setItem('user', JSON.stringify(this.user));
+		this.pu.updateUser(this.user);
 	}
 }

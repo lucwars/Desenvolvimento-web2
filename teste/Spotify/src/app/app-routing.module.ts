@@ -1,3 +1,4 @@
+import { UserPlaylistsComponent } from './user-playlists/user-playlists.component';
 import { PlaylistSelectedComponent } from './playlist-selected/playlist-selected.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -16,6 +17,7 @@ const routes: Routes = [
 	{ path: 'playlist-selected/:id', component: PlaylistSelectedComponent },
 	{ path: 'profile/:id', component: ProfileComponent },
 	{ path: 'profile/edit-profile/:id', component: EditProfileComponent },
+	{ path: 'user-playlists/:id', component: UserPlaylistsComponent },
 ];
 
 @NgModule({

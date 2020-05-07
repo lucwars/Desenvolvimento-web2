@@ -24,4 +24,8 @@ export class NavBarComponent implements OnInit {
 		let user = JSON.parse(localStorage.getItem('user'));
 		this.router.navigate(['/profile/', user.id]);
 	}
+	playlists() {
+		let user = JSON.parse(localStorage.getItem('user'));
+		this.router.navigate(['/user-playlists/', user.id]);
+	}
 }

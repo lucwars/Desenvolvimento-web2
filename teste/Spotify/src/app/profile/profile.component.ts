@@ -1,7 +1,6 @@
 import { User } from './../models/User';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PersistUsers } from '../services/users.service';
+import { Router } from '@angular/router';
 import { IsLoggedInService } from '../services/is-logged-in.service';
 
 @Component({
