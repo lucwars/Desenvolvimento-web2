@@ -1,6 +1,26 @@
 <div class="container">
 	<h3>Escute suas playlists favoritas</h3>
-
+	<button
+		type="button"
+		class="btn btn-success"
+		*ngIf="!creatingPlaylist"
+		(click)="createPlaylist()"
+	>
+		Crie sua playlist
+	</button>
+	<div class="playlist" *ngIf="creatingPlaylist">
+		<input type="text" placeholder="Nome da Playlist" />
+		<div class="searchSongs">
+			<input
+				type="text"
+				placeholder="Procure músicas"
+				(keyup)="searchSongs($event)"
+			/>
+		</div>
+		<button type="button" class="btn btn-success" (click)="finishPlaylist()">
+			Crie minha playlist!
+		</button>
+	</div>
 	<div class="music-list-container">
 		<div class="music-container" *ngFor="let audio of playlist; let i = index">
 			<div class="play-info-container">

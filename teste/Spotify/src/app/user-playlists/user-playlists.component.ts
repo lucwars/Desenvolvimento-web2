@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/User';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { PlaylistService } from '../services/playlist.service';
 
 @Component({
 	selector: 'app-user-playlists',
@@ -11,9 +13,12 @@ export class UserPlaylistsComponent implements OnInit {
 	idPlaying = -1;
 	audio = new Audio();
 	user: User;
+	playlists: Array<any>;
 	playlist: Array<any>;
+	searchResult: Array<any>;
+	creatingPlaylist: boolean = false;
 
-	constructor() {}
+	constructor(private ps: PlaylistService) {}
 
 	ngOnInit(): void {
 		let localUser = JSON.parse(localStorage.getItem('user'));
@@ -27,7 +32,7 @@ export class UserPlaylistsComponent implements OnInit {
 			localUser.yearOfBirth,
 			localUser.gender
 		);
-		this.playlist = localUser.playlist;
+		this.playlists = localUser.playlist;
 	}
 
 	playMusic(musicPath, index) {
@@ -52,5 +57,20 @@ export class UserPlaylistsComponent implements OnInit {
 		const seg = time - min * 60;
 
 		return `${min}:${String(seg).padStart(2, '0')}`;
+	}
+
+	searchSongs(event: any) {
+		let name = String(event.target.value);
+		this.ps.search(name).subscribe((p) => {
+			console.log(p);
+		});
+	}
+
+	createPlaylist(): void {
+		this.creatingPlaylist = true;
+	}
+
+	finishPlaylist(): void {
+		this.creatingPlaylist = false;
 	}
 }

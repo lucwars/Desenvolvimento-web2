@@ -1,8 +1,10 @@
+import { tap } from 'rxjs/internal/operators';
+import { Audio } from './../audioMOCK/audio';
 import { Playlists } from './../playlistMock/playlist-mock';
 import { Playlist } from './../playlistMock/playlist';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root',
@@ -17,5 +19,13 @@ export class PlaylistService {
 
 	show(i: number): Observable<Playlist> {
 		return this.http.get<Playlist>(`api/playlists/${i}`);
+	}
+
+	search(term: string): Observable<Audio[]> {
+		term = term.trim();
+
+		const options = term ? { params: new HttpParams().set('name', term) } : {};
+
+		return this.http.get<Audio[]>(this.SERVER_URL + 'musicas', options);
 	}
 }

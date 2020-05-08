@@ -19,6 +19,14 @@ div.playlist-selected-content {
 	min-height: 100%;
 }
 
+.container {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	background-color: #f3f3f3;
+}
+
 div.playlist-selected-container {
 	background-color: rgba(36, 36, 36, 0.822);
 	max-width: 1500px;
