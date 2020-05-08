@@ -61,8 +61,8 @@ export class UserPlaylistsComponent implements OnInit {
 
 	searchSongs(event: any) {
 		let name = String(event.target.value);
-		this.ps.search(name).subscribe((p) => {
-			console.log(p);
+		this.ps.search(name).subscribe((result) => {
+			this.searchResult = result;
 		});
 	}
 
