@@ -67,10 +67,4 @@ export class PlaylistSelectedComponent implements OnInit {
 
 		return `${min}:${String(seg).padStart(2, '0')}`;
 	}
-
-	addToPlaylist(audio) {
-		this.user.addMusic(audio);
-		localStorage.setItem('user', JSON.stringify(this.user));
-		this.pu.updateUser(this.user);
-	}
 }

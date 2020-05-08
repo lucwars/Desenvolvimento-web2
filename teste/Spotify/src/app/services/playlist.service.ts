@@ -24,7 +24,23 @@ export class PlaylistService {
 	search(term: string): Observable<Audio[]> {
 		term = term.trim();
 
-		const options = term ? { params: new HttpParams().set('name', term) } : {};
+		const options = term
+			? {
+					params: new HttpParams().set('name', term),
+			  }
+			: {};
+
+		return this.http.get<Audio[]>(this.SERVER_URL + 'musicas', options);
+	}
+
+	searchByAuthor(term: string): Observable<Audio[]> {
+		term = term.trim();
+
+		const options = term
+			? {
+					params: new HttpParams().set('author', term),
+			  }
+			: {};
 
 		return this.http.get<Audio[]>(this.SERVER_URL + 'musicas', options);
 	}

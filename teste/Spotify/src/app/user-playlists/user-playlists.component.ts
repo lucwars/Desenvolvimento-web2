@@ -1,7 +1,8 @@
+import { PersistUsers } from './../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/User';
-import { FormBuilder, FormGroup } from '@angular/forms';
 import { PlaylistService } from '../services/playlist.service';
+import { UserPlaylist } from '../models/UserPlaylist';
 
 @Component({
 	selector: 'app-user-playlists',
@@ -13,12 +14,13 @@ export class UserPlaylistsComponent implements OnInit {
 	idPlaying = -1;
 	audio = new Audio();
 	user: User;
-	playlists: Array<any>;
+	playlists: Array<any> = [];
 	playlist: Array<any>;
 	searchResult: Array<any>;
 	creatingPlaylist: boolean = false;
+	playlistName: string;
 
-	constructor(private ps: PlaylistService) {}
+	constructor(private ps: PlaylistService, private pu: PersistUsers) {}
 
 	ngOnInit(): void {
 		let localUser = JSON.parse(localStorage.getItem('user'));
@@ -32,7 +34,7 @@ export class UserPlaylistsComponent implements OnInit {
 			localUser.yearOfBirth,
 			localUser.gender
 		);
-		this.playlists = localUser.playlist;
+		this.playlist = localUser.playlist;
 	}
 
 	playMusic(musicPath, index) {
@@ -66,11 +68,35 @@ export class UserPlaylistsComponent implements OnInit {
 		});
 	}
 
+	searchSongsByAuthor(event: any) {
+		let author = String(event.target.value);
+		this.ps.searchByAuthor(author).subscribe((result) => {
+			this.searchResult = result;
+		});
+	}
+
 	createPlaylist(): void {
 		this.creatingPlaylist = true;
 	}
 
 	finishPlaylist(): void {
 		this.creatingPlaylist = false;
+		let playlist = new UserPlaylist(
+			this.playlistName,
+			JSON.parse(localStorage.getItem('playlists'))
+		);
+		this.user.playlist.push(playlist);
+		console.log(this.user);
+		localStorage.setItem('user', JSON.stringify(this.user));
+		this.pu.updateUser(this.user);
+		this.pu.getUser(this.user.id).subscribe((p) => {
+			console.log(p);
+		});
+		this.playlists = [];
+	}
+
+	addToPlaylist(audio) {
+		this.playlists.push(audio);
+		localStorage.setItem('playlists', JSON.stringify(this.playlists));
 	}
 }

@@ -9,12 +9,21 @@
 		Crie sua playlist
 	</button>
 	<div class="playlist" *ngIf="creatingPlaylist">
-		<input type="text" placeholder="Nome da Playlist" />
+		<input
+			type="text"
+			placeholder="Nome da Playlist"
+			(input)="playlistName = $event.target.value"
+		/>
 		<div class="searchSongs">
 			<input
 				type="text"
-				placeholder="Procure músicas"
+				placeholder="Procure músicas pelo título"
 				(keyup)="searchSongs($event)"
+			/>
+			<input
+				type="text"
+				placeholder="Procure músicas pelo autor"
+				(keyup)="searchSongsByAuthor($event)"
 			/>
 		</div>
 		<div class="music-list-container">
@@ -46,37 +55,47 @@
 				<div class="music-time">
 					<span> {{ parseTime(audio.duration) }} Seg </span>
 				</div>
+				<button
+					(click)="addToPlaylist(audio)"
+					type="button"
+					class="btn btn-light"
+				>
+					Add
+				</button>
 			</div>
 		</div>
 		<button type="button" class="btn btn-success" (click)="finishPlaylist()">
 			Crie minha playlist!
 		</button>
 	</div>
-	<div class="music-list-container">
-		<div class="music-container" *ngFor="let audio of playlist; let i = index">
-			<div class="play-info-container">
-				<div (click)="[playMusic(audio.path, i)]">
-					<img
-						class="play-pause-button"
-						src="../../../assets/play.svg"
-						alt=""
-					/>
-				</div>
+	<div
+		class="music-container"
+		*ngFor="let playlist of user.playlist; let i = index"
+	>
+		<h3>{{ user.playlist[i].name }}</h3>
+		<div class="music-list-container">
+			<div *ngFor="let playlist of user.playlist[i].songs; let j = index">
+				{{ user.playlist[i].songs[j].name }}
+				<div class="play-info-container">
+					<div (click)="[playMusic(user.playlist[i].songs[j].path, j)]">
+						<img
+							class="play-pause-button"
+							src="../../../assets/play.svg"
+							alt=""
+						/>
+					</div>
 
-				<div class="music-info">
-					<span class="music-index">{{ i + 1 }}. </span>
-					<span>{{ audio.name }}</span>
+					<div class="music-info">
+						<span class="music-index">{{ j }}. </span>
+						<span>{{ user.playlist[i].songs[j].name }}</span>
 
-					<div class="author-album">
-						<span>{{ audio.author }}</span>
-						<span>|</span>
-						<span>{{ audio.album }}</span>
+						<div class="author-album">
+							<span>{{ user.playlist[i].songs[j].author }}</span>
+							<span>|</span>
+							<span>{{ user.playlist[i].songs[j].album }}</span>
+						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="music-time">
-				<span> {{ parseTime(audio.duration) }} Seg </span>
 			</div>
 		</div>
 	</div>

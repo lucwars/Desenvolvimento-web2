@@ -8,7 +8,7 @@ export class User {
 	monthOfBirth: string;
 	yearOfBirth: string;
 	gender: string;
-	playlist: Array<Audio> = [];
+	playlist: Array<any> = [];
 
 	constructor(
 		id: number,
