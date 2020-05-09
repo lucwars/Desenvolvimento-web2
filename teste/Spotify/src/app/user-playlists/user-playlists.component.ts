@@ -34,6 +34,7 @@ export class UserPlaylistsComponent implements OnInit {
 			localUser.yearOfBirth,
 			localUser.gender
 		);
+		this.user.playlist = localUser.playlist;
 		this.playlist = localUser.playlist;
 	}
 
@@ -52,13 +53,6 @@ export class UserPlaylistsComponent implements OnInit {
 			this.idPlaying = index;
 			icon[index]['src'] = '../../../assets/pause.svg';
 		}
-	}
-
-	parseTime(time) {
-		const min = Math.trunc(time / 60);
-		const seg = time - min * 60;
-
-		return `${min}:${String(seg).padStart(2, '0')}`;
 	}
 
 	searchSongs(event: any) {
@@ -80,23 +74,30 @@ export class UserPlaylistsComponent implements OnInit {
 	}
 
 	finishPlaylist(): void {
-		this.creatingPlaylist = false;
 		let playlist = new UserPlaylist(
 			this.playlistName,
 			JSON.parse(localStorage.getItem('playlists'))
 		);
 		this.user.playlist.push(playlist);
-		console.log(this.user);
 		localStorage.setItem('user', JSON.stringify(this.user));
-		this.pu.updateUser(this.user);
+		this.pu.updateUser(this.user).subscribe();
 		this.pu.getUser(this.user.id).subscribe((p) => {
 			console.log(p);
 		});
 		this.playlists = [];
+		this.creatingPlaylist = false;
 	}
 
 	addToPlaylist(audio) {
 		this.playlists.push(audio);
 		localStorage.setItem('playlists', JSON.stringify(this.playlists));
+	}
+
+	retirarMusica(i, j) {
+		this.user.playlist[i].songs.splice(j, 1);
+		localStorage.setItem('user', JSON.stringify(this.user));
+		this.pu.updateUser(this.user).subscribe((p) => {
+			console.log(p);
+		});
 	}
 }
