@@ -32,11 +32,13 @@ div.playlist-selected-container {
 div.playlist-selected-container div.playlist-info {
 	display: flex;
 	flex-direction: column;
-	font-size: 40px;
+	font-size: 44px;
 	text-align: center;
 	width: 500px;
 	color: #fff;
 	margin: 0 24px;
+	font-family: 'Fredoka One', cursive;
+	letter-spacing: 2px;
 }
 
 div.playlist-selected-container div.playlist-info div.back-button {
@@ -59,13 +61,13 @@ div.playlist-selected-container div.playlist-info div.back-button svg {
 	width: 20px;
 }
 div.playlist-selected-container div.playlist-info div.back-button span {
-	font-size: 16px;
+	font-size: 20px;
 }
 
 div.playlist-selected-container div.playlist-info img.playlist-image {
 	width: 500px;
 	border-radius: 50%;
-	padding: 4px;
+	padding: 0px;
 	background-color: rgba(29, 185, 84, 0.6);
 	margin-bottom: 40px;
 	box-shadow: 0px 0px 16px black;
@@ -78,6 +80,7 @@ div.music-list-container {
 	padding: 20px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	margin-top: 6vw;
 }
 
 div.music-container {
@@ -90,6 +93,9 @@ div.music-container {
 	color: #fff;
 	justify-content: space-between;
 	box-shadow: 0 0 5px 0px black;
+	font-family: 'Fredoka One', cursive;
+	font-weight: 100;
+	font-size: 18px;
 }
 
 div.music-container:hover {
@@ -103,7 +109,7 @@ div.music-container div.play-info-container {
 }
 
 .music-index {
-	font-size: 18px;
+	font-size: 22px;
 	color: #000;
 	font-weight: bold;
 }
@@ -128,7 +134,7 @@ div.music-container div.music-info div.author-album span {
 }
 
 div.music-container div.music-time {
-	font-size: 12px;
+	font-size: 14px;
 	color: #fff;
 	margin-right: 12px;
 }

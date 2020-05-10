@@ -90,14 +90,17 @@ div.music-list-container {
 
 div.music-container {
 	display: flex;
-	background-color: rgba(29, 185, 84, 0.5);
-	padding: 10px;
-	align-items: center;
-	border-radius: 8px;
-	margin-bottom: 16px;
-	color: #fff;
-	justify-content: space-between;
-	box-shadow: 0 0 5px 0px black;
+    background-color: rgba(29, 185, 84, 0.5);
+    padding: 10px;
+    align-items: center;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    color: #fff;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 0px black;
+    font-family: 'Fredoka One', cursive;
+    font-weight: 100;
+	font-size: 18px;
 }
 
 div.music-container:hover {

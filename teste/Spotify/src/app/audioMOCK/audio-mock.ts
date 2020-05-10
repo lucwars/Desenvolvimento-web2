@@ -3,37 +3,37 @@ import { Audio } from './Audio';
 export const AudioMock: Audio[] = [
 	new Audio(
 		1,
-		'Alok',
+		'Mathieu Koss',
 		'Big Jet Plane',
 		'',
-		150,
+		183,
 		'Alok',
 		'../../../assets/musicaDiretorio/Alok  Mathieu Koss - Big Jet Plane (Official Lyric Video).mp3'
 	),
 	new Audio(
 		2,
-		'Alok',
+		'Zeeba',
 		'Hear Me Now',
 		'',
-		150,
+		314,
 		'Alok',
 		'../../../assets/musicaDiretorio/Alok, Bruno Martini feat. Zeeba - Hear Me Now (Club Edit).mp3'
 	),
 	new Audio(
 		3,
-		'Alok',
+		'Rooftime  |  Dubdogz',
 		'Free My Mind',
 		'',
-		150,
+		161,
 		'Alok',
 		'../../../assets/musicaDiretorio/Alok, Rooftime, Dubdogz - Free My Mind.mp3'
 	),
 	new Audio(
 		4,
-		'Alok',
+		'Zeeba  |  IRO',
 		'Ocean',
 		'',
-		150,
+		174,
 		'Alok',
 		'../../../assets/musicaDiretorio/Alok, Zeeba, IRO - Ocean (Radio Edit).mp3'
 	),
@@ -42,16 +42,16 @@ export const AudioMock: Audio[] = [
 		'BTS',
 		'Boys with Luv',
 		'',
-		150,
+		252,
 		'BTS',
-		'BTS - Boys with Luv.mp3'
+		'../../../assets/musicaDiretorio/BTS - Boys with Luv.mp3'
 	),
 	new Audio(
 		6,
 		'BTS',
 		'DNA',
 		'',
-		150,
+		255,
 		'BTS',
 		'../../../assets/musicaDiretorio/BTS (방탄소년단) DNA Official MV.mp3'
 	),
@@ -60,7 +60,7 @@ export const AudioMock: Audio[] = [
 		'BTS',
 		'IDOL',
 		'',
-		150,
+		231,
 		'BTS',
 		'../../../assets/musicaDiretorio/BTS (방탄소년단) IDOL Official MV.mp3'
 	),
@@ -69,7 +69,7 @@ export const AudioMock: Audio[] = [
 		'BTS',
 		'MIC Drop',
 		'',
-		150,
+		274,
 		'BTS',
 		'../../../assets/musicaDiretorio/BTS (방탄소년단) MIC Drop (Steve Aoki Remix) Official MV.mp3'
 	),
@@ -78,7 +78,7 @@ export const AudioMock: Audio[] = [
 		'Coldplay',
 		'Adventure Of A Lifetime',
 		'',
-		150,
+		315,
 		'Coldplay',
 		'../../../assets/musicaDiretorio/Coldplay - Adventure Of A Lifetime (Official video).mp3'
 	),
@@ -87,7 +87,7 @@ export const AudioMock: Audio[] = [
 		'Coldplay',
 		'Hymn For The Weekend',
 		'',
-		150,
+		260,
 		'Coldplay',
 		'../../../assets/musicaDiretorio/Coldplay - Hymn For The Weekend (Official video).mp3'
 	),
@@ -96,7 +96,7 @@ export const AudioMock: Audio[] = [
 		'Coldplay',
 		'Up&Up',
 		'',
-		150,
+		250,
 		'Coldplay',
 		'../../../assets/musicaDiretorio/Coldplay - Up&Up (Official video).mp3'
 	),
@@ -105,16 +105,16 @@ export const AudioMock: Audio[] = [
 		'Coldplay',
 		'Viva La Vida',
 		'',
-		150,
+		242,
 		'Coldplay',
 		'../../../assets/musicaDiretorio/Coldplay-Viva La Vida.mp3'
 	),
 	new Audio(
 		13,
-		'Gorillaz',
+		'Fatoumata Diawara',
 		'Désolé',
 		'',
-		150,
+		236,
 		'Gorillaz',
 		'../../../assets/musicaDiretorio/Gorillaz - Désolé (feat. Fatoumata Diawara).mp3'
 	),
@@ -123,16 +123,16 @@ export const AudioMock: Audio[] = [
 		'Gorillaz',
 		'Feel Good Inc.',
 		'',
-		150,
+		258,
 		'Gorillaz',
 		'../../../assets/musicaDiretorio/Gorillaz - Feel Good Inc. (Remastered).mp3'
 	),
 	new Audio(
 		15,
-		'Gorillaz',
+		'Pusha T  |  Mavis Staples',
 		'Let Me Out',
 		'',
-		150,
+		175,
 		'Gorillaz',
 		'../../../assets/musicaDiretorio/Gorillaz - Let Me Out (Art Track).mp3'
 	),
@@ -141,7 +141,7 @@ export const AudioMock: Audio[] = [
 		'Gorillaz',
 		'Clint Eastwood',
 		'',
-		150,
+		343,
 		'Gorillaz',
 		'../../../assets/musicaDiretorio/Gorillaz-ClintEastwood.mp3'
 	),
@@ -150,7 +150,7 @@ export const AudioMock: Audio[] = [
 		'Imagine Dragons',
 		'Believer',
 		'',
-		150,
+		216,
 		'Imagine Dragons',
 		'../../../assets/musicaDiretorio/Imagine Dragons - Believer.mp3'
 	),
@@ -159,7 +159,7 @@ export const AudioMock: Audio[] = [
 		'Imagine Dragons',
 		'Radioactive',
 		'',
-		150,
+		189,
 		'Imagine Dragons',
 		'../../../assets/musicaDiretorio/Imagine Dragons - Radioactive.mp3'
 	),
@@ -168,7 +168,7 @@ export const AudioMock: Audio[] = [
 		'Imagine Dragons',
 		'Thunder',
 		'',
-		150,
+		204,
 		'Imagine Dragons',
 		'../../../assets/musicaDiretorio/Imagine Dragons - Thunder.mp3'
 	),
@@ -177,7 +177,7 @@ export const AudioMock: Audio[] = [
 		'Imagine Dragons',
 		'Warriors',
 		'',
-		150,
+		170,
 		'Imagine Dragons',
 		'../../../assets/musicaDiretorio/Imagine Dragons- Warrios.mp3'
 	),
@@ -186,7 +186,7 @@ export const AudioMock: Audio[] = [
 		'Pink Floyd',
 		'Time',
 		'',
-		150,
+		380,
 		'Pink Floyd',
 		'../../../assets/musicaDiretorio/Pink Floyd -  Time.mp3'
 	),
@@ -195,7 +195,7 @@ export const AudioMock: Audio[] = [
 		'Pink Floyd',
 		'Another Brick In The Wall',
 		'',
-		150,
+		299,
 		'Pink Floyd',
 		'../../../assets/musicaDiretorio/Pink Floyd - Another Brick In The Wall.mp3'
 	),
@@ -204,7 +204,7 @@ export const AudioMock: Audio[] = [
 		'Pink Floyd',
 		'Comfortably Numb',
 		'',
-		150,
+		414,
 		'Pink Floyd',
 		'../../../assets/musicaDiretorio/Pink Floyd - Comfortably Numb.mp3'
 	),
@@ -213,7 +213,7 @@ export const AudioMock: Audio[] = [
 		'Pink Floyd',
 		'Wish You Were Here',
 		'',
-		150,
+		334,
 		'Pink Floyd',
 		'../../../assets/musicaDiretorio/Pinky Floyd - Wish You Were Here.mp3'
 	),

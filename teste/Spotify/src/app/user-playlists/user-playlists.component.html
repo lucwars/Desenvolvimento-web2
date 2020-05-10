@@ -9,23 +9,42 @@
 		Crie sua playlist
 	</button>
 	<div class="playlist" *ngIf="creatingPlaylist">
-		<input
+		
+		<div class="md-form">
+			<label for="inputLGEx">Insira o nome da playlist:</label>
+			<input
+		
 			type="text"
+			id="form1"
+			class="form-control"
 			placeholder="Nome da Playlist"
 			(input)="playlistName = $event.target.value"
+			
 		/>
+		
 		<div class="searchSongs">
+			<label for="inputLGEx">Insira o nome da musica:</label>
 			<input
 				type="text"
+				class="form-control"
 				placeholder="Procure músicas pelo título"
 				(keyup)="searchSongs($event)"
 			/>
-			<input
+			
+		</div>
+
+		<div class="searchSongs">
+			<label for="inputLGEx">Insira o nome do cantor:</label>
+		<input
 				type="text"
+				class="form-control"
 				placeholder="Procure músicas pelo autor"
 				(keyup)="searchSongsByAuthor($event)"
 			/>
 		</div>
+
+		</div>
+
 		<div class="music-list-container">
 			<div
 				class="music-container"
@@ -55,7 +74,7 @@
 				<button
 					(click)="addToPlaylist(audio)"
 					type="button"
-					class="btn btn-light"
+					class="btn btn-primary"
 				>
 					Add
 				</button>
