@@ -22,7 +22,7 @@ div.playlist-selected-content {
 div.playlist-selected-container {
 	background-color: rgba(36, 36, 36, 0.822);
 	max-width: 1500px;
-	border-radius: 8px;
+	border-radius: 22px;
 	height: 700px;
 	margin: 60px auto;
 	padding: 40px;
