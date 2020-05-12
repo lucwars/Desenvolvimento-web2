@@ -51,7 +51,7 @@ export class UserPlaylistsComponent implements OnInit {
 			this.audio.play();
 			this.isPlaying = true;
 			this.idPlaying = index;
-			icon[index]['src'] = '../../../assets/pause.svg';
+			// icon[index]['src'] = '../../../assets/pause.svg';
 		}
 	}
 

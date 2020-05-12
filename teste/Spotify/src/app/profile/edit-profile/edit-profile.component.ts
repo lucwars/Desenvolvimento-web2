@@ -44,6 +44,8 @@ export class EditProfileComponent implements OnInit {
 			this.myForm.value.yearOfBirth,
 			this.myForm.value.gender
 		);
+		let localUser = JSON.parse(localStorage.getItem('user'));
+		userUpdated.playlist = localUser.playlist;
 		this.pu.updateUser(userUpdated).subscribe();
 		localStorage.setItem('user', JSON.stringify(userUpdated));
 		this.router.navigate(['/profile/', userUpdated.id]);
