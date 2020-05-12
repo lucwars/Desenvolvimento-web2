@@ -1,6 +1,7 @@
 <div class="container">
-	<h3>Escute suas playlists favoritas</h3>
+	<h3 id="MainPlaylist">Escute Suas Playlists Favoritas</h3>
 	<button
+		id="buttonCreate"
 		type="button"
 		class="btn btn-success"
 		*ngIf="!creatingPlaylist"
@@ -11,7 +12,7 @@
 	<div class="playlist" *ngIf="creatingPlaylist">
 		
 		<div class="md-form">
-			<label for="inputLGEx">Insira o nome da playlist:</label>
+			<label for="inputLGEx"> <b> Insira o nome da playlist:</b></label>
 			<input
 		
 			type="text"
@@ -23,7 +24,7 @@
 		/>
 		
 		<div class="searchSongs">
-			<label for="inputLGEx">Insira o nome da musica:</label>
+			<label for="inputLGEx"> <b> Insira o nome da música:</b></label>
 			<input
 				type="text"
 				class="form-control"
@@ -34,7 +35,7 @@
 		</div>
 
 		<div class="searchSongs">
-			<label for="inputLGEx">Insira o nome do cantor:</label>
+			<label for="inputLGEx"> <b> Insira o nome do cantor:</b></label>
 		<input
 				type="text"
 				class="form-control"
@@ -80,7 +81,7 @@
 				</button>
 			</div>
 		</div>
-		<button type="button" class="btn btn-success" (click)="finishPlaylist()">
+		<button id="buttonCreate" type="button" class="btn btn-success" (click)="finishPlaylist()">
 			Crie minha playlist!
 		</button>
 	</div>
@@ -88,14 +89,14 @@
 		class="music-container"
 		*ngFor="let playlist of user.playlist; index as i"
 	>
-		<h3>{{ user.playlist[i].name }}</h3>
+		<h2>{{ user.playlist[i].name }}</h2>
 
 		<div class="music-list-container">
 			<div *ngFor="let playlist of user.playlist[i].songs; index as j">
 				{{ user.playlist[i].songs[j].name }}
 
 				<div class="play-info-container">
-					<div (click)="[playMusic(user.playlist[i].songs[j].path, j)]">
+					<div (click)="[playMusic(user.playlist[i].songs[j].path, j )]">
 						<img
 							class="play-pause-button"
 							src="../../../assets/play.svg"
@@ -120,7 +121,7 @@
 						class="btn btn-danger"
 						(click)="retirarMusica(i, j)"
 					>
-						Retirar Música
+						Remover Música
 					</button>
 				</div>
 			</div>
