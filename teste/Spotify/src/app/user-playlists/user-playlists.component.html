@@ -128,14 +128,15 @@
 				</div>
 			</div>
 		</div>
+		<div class="addMusicPlaylist">
 		<button
-			id="buttonCreate"
+			id="buttonAddMusics"
 			type="button"
-			class="btn btn-success"
+			class="btn btn-primary"
 			*ngIf="!creatingPlaylist"
 			(click)="editPlaylist()"
 		>
-			Adicione músicas na sua playlist.
+			Adicionar músicas
 		</button>
 		<div class="playlist" *ngIf="editingPlaylist">
 			<div class="md-form">
@@ -205,8 +206,9 @@
 				class="btn btn-success"
 				(click)="finishEditingPlaylist()"
 			>
-				Adicionar músicas!
+			Confirmar Seleção
 			</button>
+		</div>
 		</div>
 	</div>
 </div>

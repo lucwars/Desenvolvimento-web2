@@ -13,6 +13,16 @@
 	padding: 10px 30px;
 }
 
+#buttonAddMusics{
+	margin-left: 26vw;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	font-size: 20px;
+	font-family: 'Fredoka One', cursive;
+	padding: 10px 30px;
+	
+}
+
 div.playlist-selected-content {
 	min-height: 100%;
 }
