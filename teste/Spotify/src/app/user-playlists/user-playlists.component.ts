@@ -18,6 +18,7 @@ export class UserPlaylistsComponent implements OnInit {
 	playlist: Array<any>;
 	searchResult: Array<any>;
 	creatingPlaylist: boolean = false;
+	editingPlaylist: boolean = false;
 	playlistName: string;
 
 	constructor(private ps: PlaylistService, private pu: PersistUsers) {}
@@ -38,7 +39,7 @@ export class UserPlaylistsComponent implements OnInit {
 		this.playlist = localUser.playlist;
 	}
 
-	playMusic(musicPath, index) {
+	playMusic(musicPath, index): void {
 		const icon = document.getElementsByClassName('play-pause-button');
 
 		if (this.isPlaying) {
@@ -55,14 +56,14 @@ export class UserPlaylistsComponent implements OnInit {
 		}
 	}
 
-	searchSongs(event: any) {
+	searchSongs(event: any): void {
 		let name = String(event.target.value);
 		this.ps.search(name).subscribe((result) => {
 			this.searchResult = result;
 		});
 	}
 
-	searchSongsByAuthor(event: any) {
+	searchSongsByAuthor(event: any): void {
 		let author = String(event.target.value);
 		this.ps.searchByAuthor(author).subscribe((result) => {
 			this.searchResult = result;
@@ -71,6 +72,10 @@ export class UserPlaylistsComponent implements OnInit {
 
 	createPlaylist(): void {
 		this.creatingPlaylist = true;
+	}
+
+	editPlaylist(): void {
+		this.editingPlaylist = true;
 	}
 
 	finishPlaylist(): void {
@@ -88,12 +93,22 @@ export class UserPlaylistsComponent implements OnInit {
 		this.creatingPlaylist = false;
 	}
 
-	addToPlaylist(audio) {
+	addToPlaylist(audio): void {
 		this.playlists.push(audio);
 		localStorage.setItem('playlists', JSON.stringify(this.playlists));
 	}
 
-	retirarMusica(i, j) {
+	addToEditPlaylist(audio, i): void {
+		this.user.playlist[i].songs.push(audio);
+		localStorage.setItem('user', JSON.stringify(this.user));
+	}
+
+	finishEditingPlaylist(): void {
+		this.editingPlaylist = false;
+		this.pu.updateUser(this.user).subscribe();
+	}
+
+	retirarMusica(i, j): void {
 		this.user.playlist[i].songs.splice(j, 1);
 		localStorage.setItem('user', JSON.stringify(this.user));
 		this.pu.updateUser(this.user).subscribe((p) => {
