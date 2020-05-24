@@ -129,86 +129,86 @@
 			</div>
 		</div>
 		<div class="addMusicPlaylist">
-		<button
-			id="buttonAddMusics"
-			type="button"
-			class="btn btn-primary"
-			*ngIf="!creatingPlaylist"
-			(click)="editPlaylist()"
-		>
-			Adicionar músicas
-		</button>
-		<div class="playlist" *ngIf="editingPlaylist">
-			<div class="md-form">
-				<div class="searchSongs">
-					<label for="inputLGEx">
-						<b> Insira o nome da música:</b></label
-					>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="Procure músicas pelo título"
-						(keyup)="searchSongs($event)"
-					/>
-				</div>
-
-				<div class="searchSongs">
-					<label for="inputLGEx">
-						<b> Insira o nome do cantor:</b></label
-					>
-					<input
-						type="text"
-						class="form-control"
-						placeholder="Procure músicas pelo autor"
-						(keyup)="searchSongsByAuthor($event)"
-					/>
-				</div>
-			</div>
-
-			<div class="music-list-container">
-				<div
-					class="music-container"
-					*ngFor="let audio of searchResult; let k = index"
-				>
-					<div class="play-info-container">
-						<div (click)="[playMusic(audio.path, k)]">
-							<img
-								class="play-pause-button"
-								src="../../../assets/play.svg"
-								alt=""
-							/>
-						</div>
-
-						<div class="music-info">
-							<span class="music-index">{{ k + 1 }}. </span>
-							<span>{{ audio.name }}</span>
-
-							<div class="author-album">
-								<span>{{ audio.author }}</span>
-								<span>|</span>
-								<span>{{ audio.album }}</span>
-							</div>
-						</div>
+			<button
+				id="buttonAddMusics"
+				type="button"
+				class="btn btn-primary"
+				*ngIf="!creatingPlaylist"
+				(click)="editPlaylist()"
+			>
+				Adicionar músicas
+			</button>
+			<div class="playlist" *ngIf="editingPlaylist">
+				<div class="md-form">
+					<div class="searchSongs">
+						<label for="inputLGEx">
+							<b> Insira o nome da música:</b></label
+						>
+						<input
+							type="text"
+							class="form-control"
+							placeholder="Procure músicas pelo título"
+							(keyup)="searchSongs($event)"
+						/>
 					</div>
 
-					<button
-						(click)="addToEditPlaylist(audio, i)"
-						type="button"
-						class="btn btn-primary"
-					>
-						Add
-					</button>
+					<div class="searchSongs">
+						<label for="inputLGEx">
+							<b> Insira o nome do cantor:</b></label
+						>
+						<input
+							type="text"
+							class="form-control"
+							placeholder="Procure músicas pelo autor"
+							(keyup)="searchSongsByAuthor($event)"
+						/>
+					</div>
 				</div>
+
+				<div class="music-list-container">
+					<div
+						class="music-container"
+						*ngFor="let audio of searchResult; let k = index"
+					>
+						<div class="play-info-container">
+							<div (click)="[playMusic(audio.path, k)]">
+								<img
+									class="play-pause-button"
+									src="../../../assets/play.svg"
+									alt=""
+								/>
+							</div>
+
+							<div class="music-info">
+								<span class="music-index">{{ k + 1 }}. </span>
+								<span>{{ audio.name }}</span>
+
+								<div class="author-album">
+									<span>{{ audio.author }}</span>
+									<span>|</span>
+									<span>{{ audio.album }}</span>
+								</div>
+							</div>
+						</div>
+
+						<button
+							(click)="addToEditPlaylist(audio, i)"
+							type="button"
+							class="btn btn-primary"
+						>
+							Add
+						</button>
+					</div>
+				</div>
+				<button
+					id="buttonCreate"
+					type="button"
+					class="btn btn-success"
+					(click)="finishEditingPlaylist()"
+				>
+					Confirmar Seleção
+				</button>
 			</div>
-			<button
-				id="buttonCreate"
-				type="button"
-				class="btn btn-success"
-				(click)="finishEditingPlaylist()"
-			>
-			Confirmar Seleção
-			</button>
-		</div>
 		</div>
 	</div>
 </div>
