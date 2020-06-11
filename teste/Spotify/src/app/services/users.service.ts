@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 	providedIn: 'root',
 })
 export class PersistUsers {
-	SERVER_URL: string = 'localhost:4200/';
+	SERVER_URL: string = 'http://localhost:3333/';
 
 	constructor(private http: HttpClient) {}
 
@@ -26,7 +26,7 @@ export class PersistUsers {
 			? { params: new HttpParams().set('email', email) }
 			: {};
 
-		return this.http.get(this.SERVER_URL + 'users', options);
+		return this.http.get(this.SERVER_URL + 'user', options);
 	}
 
 	public createUser(user: User) {
@@ -39,6 +39,6 @@ export class PersistUsers {
 	}
 
 	public updateUser(user: User) {
-		return this.http.put(`${this.SERVER_URL + 'users'}/${user.id}`, user);
+		return this.http.put(`${this.SERVER_URL + 'user'}/${user.id}`, user);
 	}
 }

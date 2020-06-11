@@ -13,7 +13,6 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { AudioplayerComponent } from './audioplayer/audioplayer.component';
 import { PlaylistSelectedComponent } from './playlist-selected/playlist-selected.component';
 import { AuthModule } from './auth/auth.module';
-import { InMemoryDataService } from './services/in-memory-data.service';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './profile/edit-profile/edit-profile.component';
 import { UserPlaylistsComponent } from './user-playlists/user-playlists.component';
@@ -38,7 +37,6 @@ import { UserPlaylistsComponent } from './user-playlists/user-playlists.componen
 		ReactiveFormsModule,
 		AuthModule,
 		HttpClientModule,
-		HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
 	],
 	providers: [],
 	bootstrap: [AppComponent],
