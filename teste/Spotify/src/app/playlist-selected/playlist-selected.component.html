@@ -33,7 +33,7 @@
 		<div class="music-list-container">
 			<div
 				class="music-container"
-				*ngFor="let audio of playlist.musics; let i = index"
+				*ngFor="let audio of playlist.songs; let i = index"
 			>
 				<div class="play-info-container">
 					<div (click)="[playMusic(audio.path, i)]">

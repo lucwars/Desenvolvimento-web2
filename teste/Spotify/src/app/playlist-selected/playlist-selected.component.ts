@@ -27,8 +27,11 @@ export class PlaylistSelectedComponent implements OnInit {
 	ngOnInit(): void {
 		this.playlistId = Number(this.route.snapshot.paramMap.get('id'));
 		this.ps.show(this.playlistId).subscribe((playlist) => {
-			this.playlist = playlist;
+			this.playlist = playlist[0];
+			this.playlist.songs = JSON.parse(playlist[0].songs);
+			console.log(playlist[0]);
 		});
+		console.log(this.playlist);
 		// this.playlist = this.ps.show(this.playlistId);
 		let localUser = JSON.parse(localStorage.getItem('user'));
 		this.user = new User(

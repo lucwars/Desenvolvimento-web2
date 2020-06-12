@@ -6,14 +6,14 @@ export class Playlist {
 	image: string;
 	author: string;
 	duration: number;
-	musics: Audio[];
+	songs: any;
 
-	constructor(id, name, image, author, duration, musics) {
+	constructor(id, name, image, author, duration, songs) {
 		this.id = id;
 		this.name = name;
 		this.image = image;
 		this.author = author;
 		this.duration = duration;
-		this.musics = musics;
+		this.songs = songs;
 	}
 }
