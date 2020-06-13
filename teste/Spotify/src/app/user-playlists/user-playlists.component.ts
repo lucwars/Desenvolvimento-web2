@@ -83,12 +83,11 @@ export class UserPlaylistsComponent implements OnInit {
 			this.playlistName,
 			JSON.parse(localStorage.getItem('playlists'))
 		);
+		if (this.user.playlist) {
+		}
 		this.user.playlist.push(playlist);
 		localStorage.setItem('user', JSON.stringify(this.user));
 		this.pu.updateUser(this.user).subscribe();
-		this.pu.getUser(this.user.id).subscribe((p) => {
-			console.log(p);
-		});
 		this.playlists = [];
 		this.creatingPlaylist = false;
 	}

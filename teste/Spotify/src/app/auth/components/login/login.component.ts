@@ -44,6 +44,14 @@ export class LoginComponent implements OnInit {
 		this.pu.searchUser(email).subscribe((obs) => {
 			console.log(obs);
 			let user = obs[0];
+			if (user.playlist == '') {
+				user.playlist = [];
+			}
+
+			if (user.playlist != '') {
+				user.playlist = JSON.parse(user.playlist);
+			}
+
 			if (password == user.password) {
 				console.log('usuário encontrado: ', user);
 				localStorage.setItem('user', JSON.stringify(user));

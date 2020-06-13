@@ -30,7 +30,7 @@ export class PlaylistService {
 			  }
 			: {};
 
-		return this.http.get<Audio[]>(this.SERVER_URL + 'musicas', options);
+		return this.http.get<Audio[]>(this.SERVER_URL + 'song', options);
 	}
 
 	searchByAuthor(term: string): Observable<Audio[]> {
@@ -42,6 +42,6 @@ export class PlaylistService {
 			  }
 			: {};
 
-		return this.http.get<Audio[]>(this.SERVER_URL + 'musicas', options);
+		return this.http.get<Audio[]>(this.SERVER_URL + 'song/author', options);
 	}
 }
