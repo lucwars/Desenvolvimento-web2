@@ -13,7 +13,7 @@ export const Playlists: Playlist[] = [
 	new Playlist(
 		2,
 		'BTS',
-		'../../../assets/imagemDiretorio/BTS-album.jpg',
+		'../../../assets/imagemDiretorio/bts-album.jpg',
 		'BTS',
 		1,
 		[AudioMock[4], AudioMock[5], AudioMock[6], AudioMock[7]]
